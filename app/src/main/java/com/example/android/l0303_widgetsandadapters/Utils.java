@@ -38,7 +38,8 @@ public class Utils {
 
 
     // Constant used as key for extra parameters of Intents
-    public static final String TYPE_OF_ADAPTERVIEW = "TypeOfAdapterView";
+    public static final String TYPE_OF_ADAPTERVIEW =
+            "com.example.android.l0303_widgetsandadapters.TypeOfAdapterView";
 
     // Constants identifying the type of View to display the information of Spanish provinces
     public static final int LISTVIEW = 0;
