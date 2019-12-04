@@ -6,9 +6,9 @@
     <string name="app_name">L03.03_WidgetsAndAdapters</string>
     <string name="autocomplete">AutocompleteTextView</string>
     <string name="spinner">Spinner</string>
-    <string name="listview">ListView</string>
-    <string name="gridview">GridView</string>
-    <string name="recyclerview">RecyclerView</string>
+    <string name="listview">ListView (superseded)</string>
+    <string name="gridview">GridView (superseded)</string>
+    <string name="recyclerview">RecyclerView (recommended)</string>
     <string name="expandable">ExpandableListView</string>
 
     <!-- Strings for the AutocompleteTextViewActivity -->
