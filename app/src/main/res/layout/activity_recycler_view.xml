@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2019. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+  -->
+
+<!-- Displays 3 RecyclerViews with different layouts and managers-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.RecyclerViewActivity">
+
+    <!-- RecyclerView with a Vertical LinearLayoutManager -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProvincesVertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!-- Divider to separate the RecyclerViews -->
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider"/>
+
+    <!-- RecyclerView with a Horizontal LinearLayoutManager -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProvincesHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!-- Divider to separate the RecyclerViews -->
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider" />
+
+    <!-- RecyclerView with a 3-columns GridLayoutManager -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProvincesGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2019. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bAutocomplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="displayAdaptersActivity"
+            android:text="@string/autocomplete" />
+
+        <Button
+            android:id="@+id/bSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="displayAdaptersActivity"
+            android:text="@string/spinner" />
+
+        <Button
+            android:id="@+id/bList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="displayAdaptersActivity"
+            android:text="@string/listview" />
+
+        <Button
+            android:id="@+id/bGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="displayAdaptersActivity"
+            android:text="@string/gridview" />
+
+        <Button
+            android:id="@+id/bRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="displayAdaptersActivity"
+            android:text="@string/recyclerview" />
+
+        <Button
+            android:id="@+id/bExpandable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="displayAdaptersActivity"
+            android:text="@string/expandable" />
+    </LinearLayout>
+</ScrollView>

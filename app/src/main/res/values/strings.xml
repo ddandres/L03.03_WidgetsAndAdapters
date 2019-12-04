@@ -1,0 +1,26 @@
+<!--
+  ~ Copyright (c) 2019. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+  -->
+
+<resources>
+    <string name="app_name">L03.03_WidgetsAndAdapters</string>
+    <string name="autocomplete">AutocompleteTextView</string>
+    <string name="spinner">Spinner</string>
+    <string name="listview">ListView</string>
+    <string name="gridview">GridView</string>
+    <string name="recyclerview">RecyclerView</string>
+    <string name="expandable">ExpandableListView</string>
+
+    <!-- Strings for the AutocompleteTextViewActivity -->
+    <string name="enter_province">Enter the Spanish province where you live</string>
+
+    <!-- Strings for the SpinnerActivity -->
+    <string name="spinner_static">Static list of Spanish provinces</string>
+    <string name="spinner_dynamic">Dynamic list of provinces</string>
+    <string name="province">Enter the province to be added</string>
+    <string name="add">Add province</string>
+    <string name="delete">Delete selected</string>
+
+    <!-- Strings for the AdapterViewActivity -->
+    <string name="flag">Flag</string>
+</resources>
