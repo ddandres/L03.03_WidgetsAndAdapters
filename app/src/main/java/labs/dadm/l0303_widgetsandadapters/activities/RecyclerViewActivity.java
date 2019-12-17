@@ -2,7 +2,7 @@
  * Copyright (c) 2019. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package com.example.android.l0303_widgetsandadapters.activities;
+package labs.dadm.l0303_widgetsandadapters.activities;
 
 import android.os.Bundle;
 
@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
-import com.example.android.l0303_widgetsandadapters.R;
-import com.example.android.l0303_widgetsandadapters.Utils;
-import com.example.android.l0303_widgetsandadapters.adapters.ProvincesRecyclerAdapter;
+import labs.dadm.l0303_widgetsandadapters.R;
+import labs.dadm.l0303_widgetsandadapters.Utils;
+import labs.dadm.l0303_widgetsandadapters.adapters.ProvincesRecyclerAdapter;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 

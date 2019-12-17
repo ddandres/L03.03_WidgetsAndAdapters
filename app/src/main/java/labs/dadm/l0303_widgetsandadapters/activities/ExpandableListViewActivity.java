@@ -2,7 +2,7 @@
  * Copyright (c) 2019. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package com.example.android.l0303_widgetsandadapters.activities;
+package labs.dadm.l0303_widgetsandadapters.activities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,10 +11,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.android.l0303_widgetsandadapters.R;
-import com.example.android.l0303_widgetsandadapters.Utils;
-import com.example.android.l0303_widgetsandadapters.adapters.ProvincesExpandableAdapter;
-import com.example.android.l0303_widgetsandadapters.pojo.Province;
+import labs.dadm.l0303_widgetsandadapters.R;
+import labs.dadm.l0303_widgetsandadapters.Utils;
+import labs.dadm.l0303_widgetsandadapters.adapters.ProvincesExpandableAdapter;
+import labs.dadm.l0303_widgetsandadapters.pojo.Province;
 
 public class ExpandableListViewActivity extends AppCompatActivity {
 

@@ -1,4 +1,8 @@
-package com.example.android.l0303_widgetsandadapters;
+/*
+ * Copyright (c) 2019. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+ */
+
+package labs.dadm.l0303_widgetsandadapters;
 
 import android.content.Context;
 

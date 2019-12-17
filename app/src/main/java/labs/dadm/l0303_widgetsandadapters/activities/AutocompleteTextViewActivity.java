@@ -2,7 +2,7 @@
  * Copyright (c) 2019. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package com.example.android.l0303_widgetsandadapters.activities;
+package labs.dadm.l0303_widgetsandadapters.activities;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -10,7 +10,7 @@ import android.widget.AutoCompleteTextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.android.l0303_widgetsandadapters.R;
+import labs.dadm.l0303_widgetsandadapters.R;
 
 public class AutocompleteTextViewActivity extends AppCompatActivity {
 

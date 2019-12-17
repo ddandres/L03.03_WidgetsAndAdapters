@@ -2,7 +2,7 @@
  * Copyright (c) 2019. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package com.example.android.l0303_widgetsandadapters.adapters;
+package labs.dadm.l0303_widgetsandadapters.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,10 +15,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.android.l0303_widgetsandadapters.R;
-import com.example.android.l0303_widgetsandadapters.pojo.Province;
-
 import java.util.ArrayList;
+
+import labs.dadm.l0303_widgetsandadapters.R;
+import labs.dadm.l0303_widgetsandadapters.pojo.Province;
 
 /*
     Custom adapter to generate the Views required to display the information
