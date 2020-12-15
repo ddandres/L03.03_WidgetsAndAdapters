@@ -5,7 +5,7 @@
 package labs.dadm.l0303_widgetsandadapters.activities;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
@@ -26,7 +26,7 @@ public class AdapterViewActivity extends AppCompatActivity {
 
         // Get the selected Activity layout and title,
         // the layout to display each item on the AdapterView,
-        // and the reference to the AdaterView (ListView/GridView)
+        // and the reference to the AdapterView (ListView/GridView)
         int mainLayoutRes = R.layout.activity_list_view;
         int titleRes = R.string.listview;
         int resourceRes = R.layout.layout_province_list;
@@ -58,31 +58,24 @@ public class AdapterViewActivity extends AppCompatActivity {
                 Utils.getProvincesArray(AdapterViewActivity.this));
 
         // Reference to the ListView
-        AdapterView adapterView = findViewById(adapterViewRes);
+        AdapterView<Adapter> adapterView = findViewById(adapterViewRes);
         // Set the adapter to the ListView
         adapterView.setAdapter(adapter);
 
         // This listener will be executed when any element within the ListView is clicked
-        adapterView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Display a message with the name of the province clicked
-                Toast.makeText(
-                        AdapterViewActivity.this,
-                        adapter.getItem(position).getName(),
-                        Toast.LENGTH_SHORT).show();
-
-            }
+        adapterView.setOnItemClickListener((parent, view, position, id) -> {
+            // Display a message with the name of the province clicked
+            Toast.makeText(
+                    AdapterViewActivity.this,
+                    adapter.getItem(position).getName(),
+                    Toast.LENGTH_SHORT).show();
         });
 
         // This listener will be executed when any element within the ListView is long clicked
-        adapterView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                // Remove the element that has been long clicked from the array
-                adapter.remove(adapter.getItem(position));
-                return true;
-            }
+        adapterView.setOnItemLongClickListener((parent, view, position, id) -> {
+            // Remove the element that has been long clicked from the array
+            adapter.remove(adapter.getItem(position));
+            return true;
         });
     }
 
