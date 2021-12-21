@@ -89,24 +89,27 @@ public class SpinnerActivity extends AppCompatActivity {
             }
         });
 
-        // This method adds a String to the Spinner
-        findViewById(R.id.bAdd).setOnClickListener(v -> {
-            // Get the text from an EditText
-            final String province = etprovince.getText().toString();
-            if (!province.isEmpty()) {
-                // If the text is not empty, then add it to the adapter
-                adapter.add(province);
-                // Clear the EditText
-                etprovince.setText("");
-            }
-        });
+        findViewById(R.id.bAdd).setOnClickListener(v -> addProvince());
+        findViewById(R.id.bDelete).setOnClickListener(v -> removeProvince());
+    }
 
-        // This method removes the selected item from the Spinner
-        findViewById(R.id.bDelete).setOnClickListener(v -> {
-            // Get the text corresponding to the selected item
-            final String province = (String) spDynamic.getSelectedItem();
-            // Remove that item from the adapter
-            adapter.remove(province);
-        });
+    // This method adds a String to the Spinner
+    private void addProvince() {
+        // Get the text from an EditText
+        final String province = etprovince.getText().toString();
+        if (!province.isEmpty()) {
+            // If the text is not empty, then add it to the adapter
+            adapter.add(province);
+            // Clear the EditText
+            etprovince.setText("");
+        }
+    }
+
+    // This method removes the selected item from the Spinner
+    private void removeProvince() {
+        // Get the text corresponding to the selected item
+        final String province = (String) spDynamic.getSelectedItem();
+        // Remove that item from the adapter
+        adapter.remove(province);
     }
 }

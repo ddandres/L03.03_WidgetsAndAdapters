@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bExpandable).setOnClickListener(listener);
     }
 
-    public void displayAdaptersActivity(int buttonCLicked) {
+    private void displayAdaptersActivity(int buttonCLicked) {
         Intent intent = null;
 
         if (buttonCLicked == R.id.bAutocomplete) {
