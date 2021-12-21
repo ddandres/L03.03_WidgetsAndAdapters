@@ -19,32 +19,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final View.OnClickListener listener = v -> displayAdaptersActivity(v.getId());
+        findViewById(R.id.bAutocomplete).setOnClickListener(listener);
+        findViewById(R.id.bSpinner).setOnClickListener(listener);
+        findViewById(R.id.bList).setOnClickListener(listener);
+        findViewById(R.id.bGrid).setOnClickListener(listener);
+        findViewById(R.id.bRecycler).setOnClickListener(listener);
+        findViewById(R.id.bExpandable).setOnClickListener(listener);
     }
 
-    public void displayAdaptersActivity(View view) {
+    public void displayAdaptersActivity(int buttonCLicked) {
         Intent intent = null;
-        switch (view.getId()) {
-            case R.id.bAutocomplete:
-                intent = new Intent(MainActivity.this, AutocompleteTextViewActivity.class);
-                break;
-            case R.id.bSpinner:
-                intent = new Intent(MainActivity.this, SpinnerActivity.class);
-                break;
-            case R.id.bList:
-                intent = new Intent(MainActivity.this, AdapterViewActivity.class);
-                intent.putExtra(Utils.TYPE_OF_ADAPTERVIEW, Utils.LISTVIEW);
-                break;
-            case R.id.bGrid:
-                intent = new Intent(MainActivity.this, AdapterViewActivity.class);
-                intent.putExtra(Utils.TYPE_OF_ADAPTERVIEW, Utils.GRIDVIEW);
-                break;
-            case R.id.bRecycler:
-                intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
-                break;
-            case R.id.bExpandable:
-                intent = new Intent(MainActivity.this, ExpandableListViewActivity.class);
-                break;
+
+        if (buttonCLicked == R.id.bAutocomplete) {
+            intent = new Intent(MainActivity.this, AutocompleteTextViewActivity.class);
+        } else if (buttonCLicked == R.id.bSpinner) {
+            intent = new Intent(MainActivity.this, SpinnerActivity.class);
+        } else if (buttonCLicked == R.id.bList) {
+            intent = new Intent(MainActivity.this, AdapterViewActivity.class);
+            intent.putExtra(Utils.TYPE_OF_ADAPTERVIEW, Utils.LISTVIEW);
+        } else if (buttonCLicked == R.id.bGrid) {
+            intent = new Intent(MainActivity.this, AdapterViewActivity.class);
+            intent.putExtra(Utils.TYPE_OF_ADAPTERVIEW, Utils.GRIDVIEW);
+        } else if (buttonCLicked == R.id.bRecycler) {
+            intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+        } else if (buttonCLicked == R.id.bExpandable) {
+            intent = new Intent(MainActivity.this, ExpandableListViewActivity.class);
         }
+
         if (intent != null) {
             startActivity(intent);
         }

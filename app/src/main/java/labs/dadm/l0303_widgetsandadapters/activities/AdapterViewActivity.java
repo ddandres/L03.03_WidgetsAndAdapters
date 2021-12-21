@@ -22,7 +22,7 @@ public class AdapterViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Get the type of AdapterView to be used: LinearLayout or GridLayout
-        int typeOfView = getIntent().getIntExtra(Utils.TYPE_OF_ADAPTERVIEW, 0);
+        int typeOfView = getIntent().getIntExtra(Utils.TYPE_OF_ADAPTERVIEW, Utils.LISTVIEW);
 
         // Get the selected Activity layout and title,
         // the layout to display each item on the AdapterView,
@@ -51,18 +51,19 @@ public class AdapterViewActivity extends AppCompatActivity {
         // Set the title for the Activity
         setTitle(titleRes);
 
-        // Create the adapter that generates the Views from the data array to be displayed in the ListView
+        // Create the adapter that generates the Views from the data array
+        // to be displayed in the ListView/GridView
         final ProvincesAdapter adapter = new ProvincesAdapter(
                 AdapterViewActivity.this,
                 resourceRes,
                 Utils.getProvincesArray(AdapterViewActivity.this));
 
-        // Reference to the ListView
-        AdapterView<Adapter> adapterView = findViewById(adapterViewRes);
-        // Set the adapter to the ListView
+        // Reference to the ListView/GridView
+        final AdapterView<Adapter> adapterView = findViewById(adapterViewRes);
+        // Set the adapter to the ListView/GridView
         adapterView.setAdapter(adapter);
 
-        // This listener will be executed when any element within the ListView is clicked
+        // This listener will be executed when any element within the ListView/GridView is clicked
         adapterView.setOnItemClickListener((parent, view, position, id) -> {
             // Display a message with the name of the province clicked
             Toast.makeText(
@@ -71,7 +72,7 @@ public class AdapterViewActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         });
 
-        // This listener will be executed when any element within the ListView is long clicked
+        // This listener will be executed when any element within the ListView/GridView is long clicked
         adapterView.setOnItemLongClickListener((parent, view, position, id) -> {
             // Remove the element that has been long clicked from the array
             adapter.remove(adapter.getItem(position));

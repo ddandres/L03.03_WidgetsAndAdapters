@@ -4,9 +4,7 @@
 
 package labs.dadm.l0303_widgetsandadapters.pojo;
 
-/*
-    A community object consists of a coomunity name and its flag.
- */
+// A community object consists of a community name and its flag.
 public class Community {
 
     private String name;

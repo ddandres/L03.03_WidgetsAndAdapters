@@ -57,8 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="addProvince"
-            android:text="@string/add" />
+            android:text="@string/add"
+            tools:ignore="ButtonStyle" />
 
         <!-- Button that removes the selected item from the dynamic Spinner -->
         <Button
@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="deleteProvince"
-            android:text="@string/delete" />
+            android:text="@string/delete"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 </LinearLayout>

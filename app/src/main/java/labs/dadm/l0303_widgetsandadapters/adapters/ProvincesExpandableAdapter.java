@@ -19,19 +19,16 @@ import labs.dadm.l0303_widgetsandadapters.R;
 import labs.dadm.l0303_widgetsandadapters.pojo.Community;
 import labs.dadm.l0303_widgetsandadapters.pojo.Province;
 
-/*
-    Custom adapter to generate the Views required to display the information
-    of Spanish communities and their provinces in an ExpandableListView.
- */
-
+// Custom adapter to generate the Views required to display the information
+// of Spanish communities and their provinces in an ExpandableListView.
 public class ProvincesExpandableAdapter extends BaseExpandableListAdapter {
 
     // Array with information for each community
-    private ArrayList<Community> communities;
+    final private ArrayList<Community> communities;
     // Array of Arrays with information for each province.
     // This position of elements in the first array matches that of the communities in other array.
     // The second array contains information for each province in that community.
-    private ArrayList<ArrayList<Province>> provinces;
+    final private ArrayList<ArrayList<Province>> provinces;
 
     public ProvincesExpandableAdapter(
             ArrayList<Community> communities, ArrayList<ArrayList<Province>> provinces) {
@@ -39,69 +36,54 @@ public class ProvincesExpandableAdapter extends BaseExpandableListAdapter {
         this.provinces = provinces;
     }
 
-    /*
-        Returns the number of communities.
-     */
+    // Returns the number of communities.
     @Override
     public int getGroupCount() {
         return this.communities.size();
     }
 
-    /*
-        Returns the number of provinces for a given community.
-     */
+    // Returns the number of provinces for a given community.
     @Override
     public int getChildrenCount(int groupPosition) {
         return this.provinces.get(groupPosition).size();
     }
 
-    /*
-        Returns the coomunity at the given position.
-     */
+    // Returns the community at the given position.
     @Override
     public Object getGroup(int groupPosition) {
         return communities.get(groupPosition);
     }
 
-    /*
-        Returns the province at a given position within a community also stated by its position.
-     */
+    // Returns the province at a given position within a community also stated by its position.
     @Override
     public Object getChild(int groupPosition, int childPosition) {
         return provinces.get(groupPosition).get(childPosition);
     }
 
-    /*
-        Returns the community Id, which must be unique.
-     */
+    // Returns the community Id, which must be unique.
     @Override
     public long getGroupId(int groupPosition) {
         return groupPosition;
     }
 
-    /*
-        Returns the province Id, which must be unique within its community.
-     */
+    // Returns the province Id, which must be unique within its community.
     @Override
     public long getChildId(int groupPosition, int childPosition) {
         return childPosition;
     }
 
-    /*
-        Returns whether the same Id always refers to the same object.
-     */
+    // Returns whether the same Id always refers to the same object.
     @Override
     public boolean hasStableIds() {
         return true;
     }
 
-    /*
-        Gets the View to display the data corresponding the Spanish community indexed by position.
-        Views are recycled, so only those fitting into the screen are actually created.
-        A Holder pattern is used to speed up retrieving the reference to elements within each View.
-     */
+    // Gets the View to display the data corresponding the Spanish community indexed by position.
+    // Views are recycled, so only those fitting into the screen are actually created.
+    // A Holder pattern is used to speed up retrieving the reference to elements within each View.
     @Override
-    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+    public View getGroupView(
+            int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         // Holder
         CommunityHolder holder;
         // View to be reused, if possible
@@ -110,7 +92,9 @@ public class ProvincesExpandableAdapter extends BaseExpandableListAdapter {
         if (view == null) {
             // Get a LayoutInflater
             final LayoutInflater inflater =
-                    (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    (LayoutInflater) parent
+                            .getContext()
+                            .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // Create a View from the layout for communities
             view = inflater.inflate(R.layout.layout_group_expandable, parent, false);
 
@@ -134,14 +118,13 @@ public class ProvincesExpandableAdapter extends BaseExpandableListAdapter {
         return view;
     }
 
-    /*
-        Gets the View to display the data corresponding the Spanish province indexed by position
-        within a given community also indexed by position.
-        Views are recycled, so only those fitting into the screen are actually created.
-        A Holder pattern is used to speed up retrieving the reference to elements within each View.
-     */
+    // Gets the View to display the data corresponding the Spanish province indexed by position
+    // within a given community also indexed by position.
+    // Views are recycled, so only those fitting into the screen are actually created.
+    // A Holder pattern is used to speed up retrieving the reference to elements within each View.
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+    public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
+                             View convertView, ViewGroup parent) {
         // Holder
         ProvinceHolder holder;
         // View to be reused, if possible
@@ -150,7 +133,9 @@ public class ProvincesExpandableAdapter extends BaseExpandableListAdapter {
         if (view == null) {
             // Get a LayoutInflater
             final LayoutInflater inflater =
-                    (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    (LayoutInflater) parent
+                            .getContext()
+                            .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // Create a View from the layout for provinces
             view = inflater.inflate(R.layout.layout_province_list, parent, false);
 
@@ -189,10 +174,8 @@ public class ProvincesExpandableAdapter extends BaseExpandableListAdapter {
         return view;
     }
 
-    /*
-        Returns whether the provinces are selectable.
-        If so, they can have dividers between them
-     */
+    // Returns whether the provinces are selectable.
+    // If so, they can have dividers between them
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;

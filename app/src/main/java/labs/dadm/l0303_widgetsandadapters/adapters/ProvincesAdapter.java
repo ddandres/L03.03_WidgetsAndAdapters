@@ -20,25 +20,22 @@ import java.util.ArrayList;
 import labs.dadm.l0303_widgetsandadapters.R;
 import labs.dadm.l0303_widgetsandadapters.pojo.Province;
 
-/*
-    Custom adapter to generate the Views required to display the information
-    of Spanish provinces in a ListView/GridView.
- */
+// Custom adapter to generate the Views required to display the information
+// of Spanish provinces in a ListView/GridView.
 public class ProvincesAdapter extends ArrayAdapter<Province> {
 
     // Holds a reference to the layout that should be used to create the required Views
-    private int layout;
+    final private int layout;
 
-    public ProvincesAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Province> objects) {
+    public ProvincesAdapter(
+            @NonNull Context context, int resource, @NonNull ArrayList<Province> objects) {
         super(context, resource, objects);
         this.layout = resource;
     }
 
-    /*
-        Gets the View to display the data corresponding the Spanish province indexed by position.
-        Views are recycled, so only those fitting into the screen are actually created.
-        A Holder pattern is used to speed up retrieving the reference to elements within each View.
-     */
+    // Gets the View to display the data corresponding the Spanish province indexed by position.
+    // Views are recycled, so only those fitting into the screen are actually created.
+    // A Holder pattern is used to speed up retrieving the reference to elements within each View.
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

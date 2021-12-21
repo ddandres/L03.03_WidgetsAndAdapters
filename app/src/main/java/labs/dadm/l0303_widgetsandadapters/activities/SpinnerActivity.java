@@ -65,10 +65,10 @@ public class SpinnerActivity extends AppCompatActivity {
         spDynamic = findViewById(R.id.spDynamic);
         // Adapter that provides a View (android.R.layout.simple_spinner_dropdown_item)
         // for each data object within an array (ArrayList)
-        adapter = new ArrayAdapter<String>(
+        adapter = new ArrayAdapter<>(
                 SpinnerActivity.this,
                 android.R.layout.simple_spinner_item,
-                new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.provinces))));
+                new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.provinces))));
         // Set the layout to create the dropdown View
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Associate the adapter to the dynamic SPinner
@@ -84,30 +84,29 @@ public class SpinnerActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Disable the delete Button because there is an item selected
+                // Disable the delete Button because there is not any item selected
                 bDelete.setEnabled(false);
             }
         });
 
-    }
+        // This method adds a String to the Spinner
+        findViewById(R.id.bAdd).setOnClickListener(v -> {
+            // Get the text from an EditText
+            final String province = etprovince.getText().toString();
+            if (!province.isEmpty()) {
+                // If the text is not empty, then add it to the adapter
+                adapter.add(province);
+                // Clear the EditText
+                etprovince.setText("");
+            }
+        });
 
-    // This method adds a String to the Spinner
-    public void addProvince(View view) {
-        // Get the text from an EditText
-        final String province = etprovince.getText().toString();
-        if (!province.isEmpty()) {
-            // If the text is not empty, then add it to the adapter
-            adapter.add(province);
-            // Clear the EditText
-            etprovince.setText("");
-        }
-    }
-
-    // This method removes the selected item from the Spinner
-    public void deleteProvince(View view) {
-        // Get the text corresponding to the selected item
-        final String province = (String) spDynamic.getSelectedItem();
-        // Remove that item from the adapter
-        adapter.remove(province);
+        // This method removes the selected item from the Spinner
+        findViewById(R.id.bDelete).setOnClickListener(v -> {
+            // Get the text corresponding to the selected item
+            final String province = (String) spDynamic.getSelectedItem();
+            // Remove that item from the adapter
+            adapter.remove(province);
+        });
     }
 }

@@ -27,18 +27,20 @@ public class RecyclerViewActivity extends AppCompatActivity {
         // Set the title for the Activity
         setTitle(R.string.recyclerview);
 
-        /*
-            RecyclerView with Vertical LinearLayoutManager
-         */
+        // **********************************************
+        // RecyclerView with Vertical LinearLayoutManager
+        // **********************************************
 
         // Reference to the RecyclerView
         RecyclerView recycler = findViewById(R.id.rvProvincesVertical);
         // Its size is fixed, so it can be optimised
         recycler.setHasFixedSize(true);
 
-        // Create the adapter that generates the Views from the data array to be displayed in the RecyclerView
+        // Create the adapter that generates the Views from the data array
+        // to be displayed in the RecyclerView
         ProvincesRecyclerAdapter adapter = new ProvincesRecyclerAdapter(
-                R.layout.layout_province_list, Utils.getProvincesArray(RecyclerViewActivity.this));
+                R.layout.layout_province_list, Utils.getProvincesArray(
+                RecyclerViewActivity.this));
         // Set the adapter to the RecyclerView
         recycler.setAdapter(adapter);
 
@@ -49,9 +51,10 @@ public class RecyclerViewActivity extends AppCompatActivity {
         // Set the manager to the RecyclerView
         recycler.setLayoutManager(manager);
 
-        /*
-            RecyclerView with Horizontal LinearLayoutManager
-         */
+        // ************************************************
+        // RecyclerView with Horizontal LinearLayoutManager
+        // ************************************************
+
         // Reference to the RecyclerView
         recycler = findViewById(R.id.rvProvincesHorizontal);
         // Its size is fixed, so it can be optimised
@@ -69,28 +72,34 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         // Create a SnapHelper to ensure the when the RecyclerView stops scrolling
         // the current item is fully displayed on the screen
-        SnapHelper snap = new LinearSnapHelper();
+        final SnapHelper snap = new LinearSnapHelper();
         // Attach the SnapHelper to the RecyclerView
         snap.attachToRecyclerView(recycler);
 
-        /*
-            RecyclerView with Vertical GridLayoutManager
-         */
+        // ********************************************
+        // RecyclerView with Vertical GridLayoutManager
+        // ********************************************
+
         // Reference to the RecyclerView
         recycler = findViewById(R.id.rvProvincesGrid);
         // Its size is fixed, so it can be optimised
         recycler.setHasFixedSize(true);
 
-        // Create the adapter that generates the Views from the data array to be displayed in the RecyclerView
+        // Create the adapter that generates the Views from the data array
+        // to be displayed in the RecyclerView
         adapter = new ProvincesRecyclerAdapter(
-                R.layout.layout_province_grid, Utils.getProvincesArray(RecyclerViewActivity.this));
+                R.layout.layout_province_grid, Utils.getProvincesArray(
+                RecyclerViewActivity.this));
         // Set the adapter to the RecyclerView
         recycler.setAdapter(adapter);
 
         // Create the LayoutManager in charge of positioning elements within the RecyclerView:
         // grid and vertical in this case
         manager = new GridLayoutManager(
-                RecyclerViewActivity.this, 3, RecyclerView.VERTICAL, false);
+                RecyclerViewActivity.this,
+                3,
+                RecyclerView.VERTICAL,
+                false);
         // Set the manager to the RecyclerView
         recycler.setLayoutManager(manager);
 

@@ -15,24 +15,20 @@
         android:id="@+id/rvProvincesVertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_weight="1" />
 
     <!-- Divider to separate the RecyclerViews -->
     <View
         android:id="@+id/divider1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorDivider"/>
+        android:background="@color/colorDivider" />
 
     <!-- RecyclerView with a Horizontal LinearLayoutManager -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProvincesHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="wrap_content" />
 
     <!-- Divider to separate the RecyclerViews -->
     <View
@@ -46,7 +42,5 @@
         android:id="@+id/rvProvincesGrid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_weight="1" />
 </LinearLayout>

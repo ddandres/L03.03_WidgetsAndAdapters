@@ -24,7 +24,7 @@ public class AutocompleteTextViewActivity extends AppCompatActivity {
 
         // Adapter that provides a View (android.R.layout.simple_dropdown_item_1line)
         // for each data object within an array (R.array.provinces)
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 AutocompleteTextViewActivity.this,
                 android.R.layout.simple_dropdown_item_1line,
                 getResources().getStringArray(R.array.provinces));

@@ -4,9 +4,7 @@
 
 package labs.dadm.l0303_widgetsandadapters.pojo;
 
-/*
-    A province object consists of a province name, its flag, and its old car plate code.
- */
+// A province object consists of a province name, its flag, and its old car plate code.
 public class Province {
 
     private String name;

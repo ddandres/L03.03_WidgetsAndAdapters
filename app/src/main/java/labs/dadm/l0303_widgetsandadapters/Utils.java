@@ -45,14 +45,12 @@ public class Utils {
     public static final int LISTVIEW = 0;
     public static final int GRIDVIEW = 1;
 
-    /*
-        Returns the array of Spanish Provinces to be displayed in the List/GridView
-     */
+    // Returns the array of Spanish Provinces to be displayed in the List/GridView
     public static ArrayList<Province> getProvincesArray(Context context) {
-        ArrayList<Province> array = new ArrayList<>();
-        String[] names = context.getResources().getStringArray(R.array.provinces);
-        String[] plates = context.getResources().getStringArray(R.array.plates);
-        TypedArray flags = context.getResources().obtainTypedArray(R.array.flags);
+        final ArrayList<Province> array = new ArrayList<>();
+        final String[] names = context.getResources().getStringArray(R.array.provinces);
+        final String[] plates = context.getResources().getStringArray(R.array.plates);
+        final TypedArray flags = context.getResources().obtainTypedArray(R.array.flags);
         Province province;
         for (int i = 0; i < names.length; i++) {
             province = new Province(names[i], flags.getResourceId(i, R.drawable.valencia), plates[i]);
@@ -62,13 +60,11 @@ public class Utils {
         return array;
     }
 
-    /*
-        Returns an array of Spanish Communities
-     */
+    // Returns an array of Spanish Communities
     public static ArrayList<Community> getCommunities(Context context) {
-        ArrayList<Community> array = new ArrayList<>();
-        String[] names = context.getResources().getStringArray(R.array.communities);
-        TypedArray flags = context.getResources().obtainTypedArray(R.array.communities_flags);
+        final ArrayList<Community> array = new ArrayList<>();
+        final String[] names = context.getResources().getStringArray(R.array.communities);
+        final TypedArray flags = context.getResources().obtainTypedArray(R.array.communities_flags);
         Community community;
         for (int i = 0; i < names.length; i++) {
             community = new Community(names[i], flags.getResourceId(i, R.drawable.com_valenciana));
@@ -78,25 +74,23 @@ public class Utils {
         return array;
     }
 
-    /*
-        Returns an array of arrays of Provinces with information of Spanish Provinces.
-        First array has an element for each Spanish community.
-        Second array contains a Province for each province of that community.
-     */
+    // Returns an array of arrays of Provinces with information of Spanish Provinces.
+    // First array has an element for each Spanish community.
+    // Second array contains a Province for each province of that community.
     public static ArrayList<ArrayList<Province>> getProvincesPerCommunity(Context context) {
-        ArrayList<ArrayList<Province>> communities = new ArrayList<>();
+        final ArrayList<ArrayList<Province>> communities = new ArrayList<>();
         ArrayList<Province> provinces;
-        String[] names = context.getResources().getStringArray(R.array.provinces);
-        String[] plates = context.getResources().getStringArray(R.array.plates);
-        TypedArray flags = context.getResources().obtainTypedArray(R.array.flags);
+        final String[] names = context.getResources().getStringArray(R.array.provinces);
+        final String[] plates = context.getResources().getStringArray(R.array.plates);
+        final TypedArray flags = context.getResources().obtainTypedArray(R.array.flags);
         Province province;
-        int index;
-        for (int i = 0; i < comunitiesAndProvinces.length; i++) {
+        for (int[] comunitiesAndProvince : comunitiesAndProvinces) {
             provinces = new ArrayList<>();
-            for (int j = 0; j < comunitiesAndProvinces[i].length; j++) {
-                index = comunitiesAndProvinces[i][j];
+            for (int index : comunitiesAndProvince) {
                 province = new Province(
-                        names[index], flags.getResourceId(index, R.drawable.valencia), plates[index]);
+                        names[index],
+                        flags.getResourceId(index, R.drawable.valencia),
+                        plates[index]);
                 provinces.add(province);
             }
             communities.add(provinces);

@@ -5,7 +5,6 @@
 package labs.dadm.l0303_widgetsandadapters.activities;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
@@ -38,19 +37,15 @@ public class ExpandableListViewActivity extends AppCompatActivity {
         expandable.setAdapter(adapter);
 
         // This listener will be executed when any child within the ExpandableListView is clicked
-        expandable.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(
-                    ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                // Get the information (Province) from the element clicked
-                final Province province = (Province) adapter.getChild(groupPosition, childPosition);
-                // Display a message with the name of the province clicked
-                Toast.makeText(
-                        ExpandableListViewActivity.this,
-                        province.getName(),
-                        Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        expandable.setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
+            // Get the information (Province) from the element clicked
+            final Province province = (Province) adapter.getChild(groupPosition, childPosition);
+            // Display a message with the name of the province clicked
+            Toast.makeText(
+                    ExpandableListViewActivity.this,
+                    province.getName(),
+                    Toast.LENGTH_SHORT).show();
+            return true;
         });
 
     }

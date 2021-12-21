@@ -14,7 +14,9 @@
         <activity android:name=".activities.AdapterViewActivity" />
         <activity android:name=".activities.SpinnerActivity" />
         <activity android:name=".activities.AutocompleteTextViewActivity" />
-        <activity android:name=".activities.MainActivity">
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
